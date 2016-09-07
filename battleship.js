@@ -70,18 +70,43 @@ var inputRow;
 var targetedBox;
 var firstInput;
 var secondInput
+var convertedFirstInput;
+var totalHits = 0;
 
-//console.log(gameBoard[][]);
+function checkForEnd()
+{
+	if(totalHits >= 17)
+	{
+		document.getElementById("instructionsArea").textContent = "Why you do dis";
+	}
+	console.log("2 Second Timer");
+}
 
 function fireTorpedo() {
-
+setInterval(checkForEnd, 1500);
 console.log("Click Function works");
 
 fireInput = document.getElementById("gameBoardInput").value;
 firstInput = fireInput.substring(0, 1);
+convertedFirstInput = letterConversion[firstInput];
 secondInput = fireInput.substring(1, 2);
-console.log(firstInput);
-//inputColumn = letterConversion.J; // This logs 9 which coressponds in the letterConversion but how do you use a Variable instead of a letter?
-
+console.log("convertedFirstInput is " + convertedFirstInput);
+console.log(gameBoard[convertedFirstInput][secondInput]);
+if(gameBoard[convertedFirstInput][secondInput] == 1)
+{
+	console.log("Hit");
+	document.getElementById("s" + convertedFirstInput + (secondInput - 1)).style.backgroundColor = "red";
+	totalHits++;
 }
+else
+{
+//document.getElementById("s" + convertedFirstInput + (secondInput - 1)).style.backgroundColor = "grey";
+var element = document.getElementById("s" + convertedFirstInput + (secondInput - 1));
+element.classList.add("transparency");
+}
+//console.log(convertedFirstInput, secondInput);
+console.log("Total hits are " + totalHits);
+checkForEnd();
+}
+
 //Add Latin Numbers :) Maybe as an end thing?

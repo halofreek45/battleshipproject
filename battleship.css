@@ -2,6 +2,12 @@ body {
     margin: 60px auto;
     width: 70%;
     max-width: 950px;
+    background-color: orange;
+    /*background-image: url("http://www.thestrongestthereis.com/wp-content/uploads/2011/12/battleship-board-game-21.jpg");
+    -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;*/
 }
 
 h1 {
@@ -44,4 +50,9 @@ p, button, input {
   position:relative;
   margin:0 auto 2em auto;
   width:500px;
+}
+.transparency
+{
+  opacity: .9;
+  line-height: 10px;
 }
